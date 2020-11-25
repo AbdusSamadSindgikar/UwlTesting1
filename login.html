@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="script/test.js"></script>
+    <title>Document</title>
+    <script>
+        function validate(){
+            var login = false;
+            var uname=document.getElementById('un').value;
+            var pword=document.getElementById('pw').value;
+
+            if(uname == '' || pword== ''){
+                alert('provide name or password');
+            }
+            if((uname.length > 12) && (pword > 12)){
+                alert('Lenght should be less than 12')
+            }else{
+                login = true;
+                localStorage.setItem('login',login)
+                document.write('Logged in')
+            }
+
+        }
+    </script>
+</head>
+<body>
+    <form>
+
+       Username : <input type="text" name="" id="un"> <br>
+       Password : <input type="password" id="pw"> <br>
+       <input type="submit" value="Submit" id="btn" onclick="validate()"> 
+
+
+    </form>
+</body>
+</html>
